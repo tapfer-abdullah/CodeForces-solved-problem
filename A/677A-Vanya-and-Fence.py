@@ -15,8 +15,3 @@ for i in aList:
         total_width+=1
 
 print(total_width)
-
-    
-
-
-
