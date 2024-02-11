@@ -1,9 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int pow(int a, int b)
+{
+    int result = 1;
+    for (int i = 1; i <= b; i++)
+    {
+        result *= a;
+    }
+    return result;
+}
+
 void solve()
 {
-    int n, t, count = 0, result[10];
+    int n, t, temp, count = 0, result[10];
     cin >> t;
 
     while (t--)
@@ -13,13 +23,15 @@ void solve()
         int i = 0;
         while (n > 0)
         {
-            int rem = n % 10;
-            int temp = rem * pow(10, i);
+            int rem = (n % 10), power = pow(10, i);
+            temp = rem * power;
             i++;
 
             if (temp > 0)
             {
-                result[count++] = temp;
+
+                result[count] = temp;
+                count++;
             }
             n /= 10;
         }
